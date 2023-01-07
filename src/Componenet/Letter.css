@@ -1,0 +1,25 @@
+.letter{
+    border: 0.5px solid gray;
+    margin: .1em;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+#correct{
+    background-color: #538D4E;
+}
+#almost{
+    background-color: #B59F3B;
+}
+#error{  
+    background-color: rgba(133, 112, 112, 0.432);
+}
+.gameover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,0 +1,51 @@
+.keyboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex-direction: column;
+    margin-top: 1em;
+}
+.line1{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+}
+.line2{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+}
+.line3{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+}
+.keys{
+    /* border: 1px solid red; */
+    height: 3em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .1em;
+    background-color: gray;
+    cursor: pointer;
+}
+#bigKey{
+    width: 70px;
+}
+@media screen and (max-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+    .keys{
+        
+        height: 4em;
+        width: 2em;
+    }
+    .keyboard{
+       
+        height: 300px;
+    }
+  }
