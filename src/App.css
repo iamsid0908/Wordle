@@ -6,9 +6,51 @@ body{
   margin: 0px;
   padding: 0px;
 }
+.icon-help{
+  margin-right: 20px;
+}
+.word{
+  margin-right: 20px;
+}
 .nav{
   height: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.rule{
+  border: 1px solid gray;
+  
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.img{
+  background-image: url("./rule.png");
+  width: 390px;
+  height: 380px;
+  background-size: cover;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 880px) {
+  .rule{
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .rule{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .img{
+    width: 290px;
+  height: 280px;
+  }
 }

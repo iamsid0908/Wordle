@@ -5,6 +5,7 @@ import Keyboard from './Componenet/Keyboard';
 import {createContext} from "react"
 import { boardDefault ,generateWordSet} from './Words';
 import GameOver  from './Componenet/GameOver';
+import HelpIcon from '@mui/icons-material/Help';
 
 export const AppContext=createContext();
 
@@ -13,6 +14,7 @@ function App() {
   const[currAttempt,setCurrentAttempt]=useState({attempt:0,letterPos:0});
   const[wordSet,setWordSet]=useState(new Set())
   const [correctWord,setCorrectWord]=useState("");
+  const [rule,setRule]=useState(false);
   // const correctWord="RIGHT"
   const [gameOver,setGameOver]=useState({
     gameOver:false,
@@ -70,10 +72,14 @@ function App() {
       setGameOver({gameOver:true,guessedWord:false})
     }
   };
+  const handleRule=()=>{
+    setRule(!rule);
+  }
   return (
     <div className="App">
       <nav className='nav'>
-        <h1>Wordle</h1>
+        <h1 className='word'>Wordle</h1>
+        <h1 onClick={handleRule}><HelpIcon  className="icon-help"/></h1>
       </nav>
       <AppContext.Provider value={{
         board,
@@ -86,6 +92,20 @@ function App() {
         correctWord,
         gameOver,
         setGameOver}}>
+          {rule?
+          <div className='rule'>
+          <h1>How to Play</h1>
+          <h3>Guess the Wordle in 6 tries</h3>
+          <ul>
+            <li>Each guess must be a valid 5 letter word</li>
+            <li>The color of tiles will change to show how close your guess was to the word</li>
+          </ul>
+          <div className='img'>
+            {/* <img src="rule.png"/> */}
+          </div>
+          </div>:
+          <div></div>
+        }
       <Board/>
       {gameOver.gameOver ? <GameOver/> : <Keyboard/>}
       
